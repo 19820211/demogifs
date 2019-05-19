@@ -3,6 +3,7 @@ package com.ak.demogifs.model.repository;
 import com.ak.demogifs.model.Gif;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,5 +32,15 @@ public class GifRepository {
             result += allGif.getName();
         }
         return result;
+    }
+
+    public List<Gif> getFavoritesGifs() {
+        List<Gif> favoriteGifs = new ArrayList<>();
+        for (Gif gif : ALL_GIFS){
+            if (gif.getFavorite()){
+                favoriteGifs.add(gif);
+            }
+        }
+        return favoriteGifs;
     }
 }
