@@ -18,6 +18,11 @@ public class GifRepository {
             new Gif("infinite-andrew", "andrew", false)
     );
 
+    public List<Gif> getGifs(){
+        return ALL_GIFS;
+    };
+
+
     //metoda która zapisuje wszystkie imiona do Stringa
 
     public String getGifNames(){
